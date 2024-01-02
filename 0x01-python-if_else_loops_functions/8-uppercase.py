@@ -5,6 +5,6 @@ def uppercase(str):
         if n >= 97 and n <= 122:
             n  = n - 32
         if i != len(str) - 1:
-            print(chr(n) , end='')
+            print("{:c}".format(n) , end='')
         else:
-            print(chr(n))
+             print("{:c}".format(n))
