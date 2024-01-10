@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+def list_max_num(my_list=[]):
+    max_num = my_list[0]
+    for i in my_list:
+        if i > max_num:
+            max_num = i
+    return max_num
+
+def best_score(a_dictionary):
+    if not a_dictionary:
+        return None
+    values_list = list(a_dictionary.values())
+    max_value = list_max_num(values_list)
+
+    for x,y in a_dictionary.items():
+        if y == max_value:
+            return x
