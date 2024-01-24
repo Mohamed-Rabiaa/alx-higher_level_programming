@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-import sys
+""" This module '0-square' defines a class 'Square' """
+
+
 class Square:
-    '''
-    This is the docstring for Square.
-    '''
+    """ Creating an empty class named 'Square' """
     pass
-sys.modules[__name__]
