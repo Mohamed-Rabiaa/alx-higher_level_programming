@@ -10,12 +10,12 @@ class Square:
         """ initializing the size attribute and checking if it is an integer
         and if it is greater than zero"""
         self.__size = size
-
-    def get_size(self):
+    @property
+    def size(self):
         """Retrives the value of size. """
         return self.__size
-
-    def set_size(self, value):
+    @size.setter
+    def size(self, value):
         """Sets the value of size. """
         self.__size = value
         if not isinstance(self.__size, int):
