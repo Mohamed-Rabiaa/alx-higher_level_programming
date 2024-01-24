@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import inspect
+class Square:
+    """This is the docstring for Square."""
+    pass
+print(inspect.getfile())
