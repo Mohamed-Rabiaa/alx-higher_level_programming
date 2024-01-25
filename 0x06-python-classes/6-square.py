@@ -10,8 +10,8 @@ class Square:
         """ initializing the size and position attributes
         and checking if the size is an integer
         and if it is greater than zero"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -26,17 +26,18 @@ class Square:
     @size.setter
     def size(self, value):
         """Sets the value of size. """
-        self.__size = value
-        if not isinstance(self.__size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif self.__size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     @position.setter
     def position(self, value):
-        if not (isinstance(self.__position, tuple) and len(self.__position) == \
-                2 and all(isinstance(i, int) for i in self.__position)):
+        if not (isinstance(value, tuple) and len(value) ==
+                2 and all(isinstance(i, int) and i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """ Returns the current square area. """
