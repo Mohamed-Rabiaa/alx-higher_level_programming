@@ -1,0 +1,46 @@
+# 3-say_my_name.txt
+===================
+
+using ``say_my_name``
+--------------------
+This is an example text file in reStructuredText format.  First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+----------
+
+	>>> say_my_name("Mohamed", "Rabiaa")
+	My name is Mohamed Rabiaa
+
+	>>> say_my_name("Mohamed")
+	My name is Mohamed 
+
+first_name is not a string:
+--------------------------
+	>>> say_my_name(10, "Khaled")
+	Traceback (most recent call last):
+    	...
+	TypeError: first_name must be a string
+
+last_name is not a string:
+-------------------------
+	>>> say_my_name("Yosof", 55)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+
+None Values:
+-----------
+	>>> say_my_name(None, "Mostapha")
+	Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name("Ragab", None)
+	Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
