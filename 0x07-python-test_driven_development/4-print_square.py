@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+""" This is the "4-print_square" module
+the 4-print_square module supplies one function, print_square()
+which prints a square with the character # and raises TypeError if size
+is not an integer or if its a float but less than zero. if size is an
+integer but less than zero it raises ValueError"""
+
+
+def print_square(size):
+    """
+    The print_square function prints a square with the character #
+    """
+
+    if (not isinstance(size, int) and not isinstance(size, float))\
+       or (isinstance(size, float) and size < 0):
+        raise TypeError("size must be an integer")
+
+    if size < 0:
+        raise ValueError("size must be >= 0")
+
+    if isinstance(size, float):
+        size = int(size)
+
+    for i in range(size):
+        for j in range(size):
+            print("#", end='')
+        print()

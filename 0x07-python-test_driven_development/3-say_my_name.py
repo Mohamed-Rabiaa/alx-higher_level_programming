@@ -5,11 +5,12 @@ which prints My name is <first name> <last name> and raises
 typeError if first_name or last_name is not a string
 """
 
-def say_my_name(first_name, last_name=""):
+
+def say_my_name(first_name=None, last_name=""):
     """
     The function say_my_name prints My name is <first name> <last name>
     """
-    if not isinstance(first_name, str):
+    if not isinstance(first_name, str) or first_name is None:
         raise TypeError("first_name must be a string")
     elif not isinstance(last_name, str):
         raise TypeError("last_name must be a string")

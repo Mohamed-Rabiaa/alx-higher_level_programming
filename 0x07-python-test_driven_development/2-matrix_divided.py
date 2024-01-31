@@ -26,9 +26,9 @@ integers/floats")
             raise TypeError("Each row of the matrix must have the same size")
         new_row = []
         for j in range(len(matrix[i])):
-            if not isinstance(matrix[i][j], int)\
-            and not isinstance(matrix[i][j], float):
-                 raise TypeError("matrix must be a matrix (list of lists) of \
+            if not isinstance(matrix[i][j], int) \
+               and not isinstance(matrix[i][j], float):
+                raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
             new_row.append(round(matrix[i][j] / div, 2))
 

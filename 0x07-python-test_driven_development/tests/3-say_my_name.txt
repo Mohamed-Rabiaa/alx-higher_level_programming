@@ -14,9 +14,6 @@ Now use it:
 	>>> say_my_name("Mohamed", "Rabiaa")
 	My name is Mohamed Rabiaa
 
-	>>> say_my_name("Mohamed")
-	My name is Mohamed 
-
 first_name is not a string:
 --------------------------
 	>>> say_my_name(10, "Khaled")
@@ -44,3 +41,22 @@ None Values:
         ...
         TypeError: last_name must be a string
 
+first_name and last_name are missing:
+------------------------------------
+	>>> say_my_name()
+	Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+
+first_name is missing:
+---------------------
+	>>> say_my_name()
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+last_name is missing:
+--------------------
+	>>> say_my_name("Mohamed")
+        My name is Mohamed 
