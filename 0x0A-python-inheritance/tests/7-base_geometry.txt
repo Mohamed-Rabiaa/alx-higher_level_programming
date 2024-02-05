@@ -31,7 +31,7 @@ value is zero:
 	>>> bg.integer_validator("age", 0)
 	Traceback (most recent call last):
         ...
-	TypeError: age must be greater than 0
+	ValueError: age must be greater than 0
 
 value is less than zero:
 -----------------------
@@ -39,4 +39,4 @@ value is less than zero:
 	>>> bg.integer_validator("distance", -4)
 	Traceback (most recent call last):
         ...
-        TypeError: distance must be greater than 0
+        ValueError: distance must be greater than 0
