@@ -25,3 +25,9 @@ Now use it:
 	[1, 2, 3, 4, 5]
 	>>> print(my_list)
 	[1, 4, 2, 3, 5]
+
+the list is empty:
+-----------------
+
+	>>> my_list = []
+	>>> my_list.print_sorted()
