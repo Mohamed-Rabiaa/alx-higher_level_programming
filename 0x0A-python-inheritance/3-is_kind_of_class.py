@@ -2,11 +2,8 @@
 """ This module defines the is_same_class function """
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """ This function returns True if the object is exactly
     an instance of the specified class ; otherwise False """
 
-    if type(obj) == a_class:
-        return True
-    else:
-        return False
+    return isinstance(obj, a_class)
