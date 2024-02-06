@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-from json import dumps
 """ This module contains the to_json_string function """
+
+
+from json import dumps
 
 
 def to_json_string(my_obj):
