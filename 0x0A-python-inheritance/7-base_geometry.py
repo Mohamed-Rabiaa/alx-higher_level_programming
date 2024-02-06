@@ -15,3 +15,6 @@ class BaseGeometry:
             raise TypeError(name + " must be an integer")
         elif value <= 0:
             raise ValueError(name + " must be greater than 0")
+
+        if not isinstance(name, str):
+            raise TypeError("name must be a string")

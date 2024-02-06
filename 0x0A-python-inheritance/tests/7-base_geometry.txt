@@ -40,3 +40,10 @@ value is less than zero:
 	Traceback (most recent call last):
         ...
         ValueError: distance must be greater than 0
+
+name is not a string:
+--------------------
+	>>> bg.integer_validator(33, 33)
+	Traceback (most recent call last):
+        ...
+        TypeError: name must be a string
