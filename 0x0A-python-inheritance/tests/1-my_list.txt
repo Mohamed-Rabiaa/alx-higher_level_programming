@@ -32,3 +32,12 @@ the list is empty:
 	>>> my_list = MyList()
 	>>> my_list.print_sorted()
 
+
+the element is not an int:
+-------------------------
+
+	>>> my_list.append("55")
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+    	...
+    	TypeError: element must be an integer
