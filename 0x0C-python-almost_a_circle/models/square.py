@@ -1,0 +1,50 @@
+#!/usr/bin/python3
+""" This module contains the Square class """
+
+
+from models.rectangle import Rectangle
+from models.validate_attr import validate_attr
+
+
+class Square(Rectangle):
+    """ This is the Square class """
+
+    def __init__(self, size, x=0, y=0, id=None):
+        super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                  self.y, self.width))
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ Validated and sets the value of the square size """
+        validate_attr('width', value)
+        self.width = value
+        self.height = value
+
+    def update(self, *args, **kwargs):
+        """ Updates the Square attributes """
+        attr_list = ['id', 'size', 'x', 'y']
+
+        if args:
+            for i, arg in enumerate(args):
+                if i < len(args):
+                    setattr(self, attr_list[i], arg)
+        else:
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
+
+    def to_dictionary(self):
+        """ Returns the dictionary representation of a Square """
+        dct = {}
+        dct['id'] = self.__dict__['id']
+        dct['x'] = self.__dict__['_Rectangle__x']
+        dct['size'] = self.__dict__['_Rectangle__width']
+        dct['y'] = self.__dict__['_Rectangle__y']
+
+        return dct

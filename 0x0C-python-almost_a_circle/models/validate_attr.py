@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+""" This module contains the validate_attr function """
+
+
+def validate_attr(attr, value):
+    """ This function validates attributes of the Rectangle class """
+    if not isinstance(value, int):
+        raise TypeError("{} must be an integer".format(attr))
+
+    if (attr == 'width' or attr == 'height') and value <= 0:
+        raise ValueError("{} must be > 0", attr)
+
+    elif (attr == 'x' or attr == 'y') and value < 0:
+        raise ValueError("{} must be >= 0", attr)
