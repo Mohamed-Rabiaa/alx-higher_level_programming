@@ -4,6 +4,9 @@ from models.base import Base
 
 class TestBase(unittest.TestCase):
 
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
     def test_id(self):
         b1 = Base()
         self.assertEqual(b1.id, 1)
