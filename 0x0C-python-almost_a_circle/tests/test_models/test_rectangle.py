@@ -91,3 +91,78 @@ class TestRectangle(unittest.TestCase):
         self.r2 = Rectangle(7, 4, id=20)
         s = "[Rectangle] (20) 0/0 - 7/4"
         self.assertEqual(self.r2.__str__(), s)
+
+     def test_update(self):
+          self.r1 = Rectangle(10, 10, 10, 10, 10)
+
+          self.r1.update(11)
+          self.assertEqual(self.r1.id, 11)
+          self.assertEqual(self.r1.width, 10)
+          self.assertEqual(self.r1.height, 10)
+          self.assertEqual(self.r1.x, 10)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(11, 22)
+          self.assertEqual(self.r1.id, 11)
+          self.assertEqual(self.r1.width, 22)
+          self.assertEqual(self.r1.height, 10)
+          self.assertEqual(self.r1.x, 10)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(11, 20, 12)
+          self.assertEqual(self.r1.id, 11)
+          self.assertEqual(self.r1.width, 20)
+          self.assertEqual(self.r1.height, 12)
+          self.assertEqual(self.r1.x, 10)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(11, 9, 7, 12)
+          self.assertEqual(self.r1.id, 11)
+          self.assertEqual(self.r1.width, 9)
+          self.assertEqual(self.r1.height, 7)
+          self.assertEqual(self.r1.x, 12)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(13, 25, 15, 5, 5)
+          self.assertEqual(self.r1.id, 13)
+          self.assertEqual(self.r1.width, 25)
+          self.assertEqual(self.r1.height, 15)
+          self.assertEqual(self.r1.x, 5)
+          self.assertEqual(self.r1.y, 5)
+
+          self.r1 = Rectangle(10, 10, 10, 10, 10)
+
+          self.r1.update(id=5)
+          self.assertEqual(self.r1.id, 5)
+          self.assertEqual(self.r1.width, 10)
+          self.assertEqual(self.r1.height, 10)
+          self.assertEqual(self.r1.x, 10)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(id=5, width=12)
+          self.assertEqual(self.r1.id, 5)
+          self.assertEqual(self.r1.width, 12)
+          self.assertEqual(self.r1.height, 10)
+          self.assertEqual(self.r1.x, 10)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(id=5, width=12, height=18)
+          self.assertEqual(self.r1.id, 5)
+          self.assertEqual(self.r1.width, 12)
+          self.assertEqual(self.r1.height, 18)
+          self.assertEqual(self.r1.x, 10)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(id=5, width=12, height=18, x=1)
+          self.assertEqual(self.r1.id, 5)
+          self.assertEqual(self.r1.width, 12)
+          self.assertEqual(self.r1.height, 18)
+          self.assertEqual(self.r1.x, 1)
+          self.assertEqual(self.r1.y, 10)
+
+          self.r1.update(id=5, width=12, height=18, x=1, y=2)
+          self.assertEqual(self.r1.id, 5)
+          self.assertEqual(self.r1.width, 12)
+          self.assertEqual(self.r1.height, 18)
+          self.assertEqual(self.r1.x, 1)
+          self.assertEqual(self.r1.y, 2)
