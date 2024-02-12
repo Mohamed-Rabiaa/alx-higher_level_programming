@@ -8,7 +8,7 @@ def validate_attr(attr, value):
         raise TypeError("{} must be an integer".format(attr))
 
     if (attr == 'width' or attr == 'height') and value <= 0:
-        raise ValueError("{} must be > 0", attr)
+        raise ValueError("{} must be > 0".format(attr))
 
     elif (attr == 'x' or attr == 'y') and value < 0:
-        raise ValueError("{} must be >= 0", attr)
+        raise ValueError("{} must be >= 0".format(attr))
