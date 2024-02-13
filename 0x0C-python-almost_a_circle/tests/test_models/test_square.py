@@ -103,3 +103,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s1.size, 20)
         self.assertEqual(self.s1.x, 2)
         self.assertEqual(self.s1.y, 2)
+
+    def test_square_to_dictionary(self):
+        self.s1 = Square(8, 1, 1, 80)
+        dct = {'y': 1, 'x': 1, 'id': 80, 'size': 8}
+        self.assertEqual(self.s1.to_dictionary(), dct)
