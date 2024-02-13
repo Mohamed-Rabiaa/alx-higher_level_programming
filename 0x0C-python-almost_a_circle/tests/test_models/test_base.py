@@ -37,8 +37,15 @@ class TestBase(unittest.TestCase):
         json_dct = '[{"id": 88, "x": 3, "size": 5, "y": 3}]'
         self.assertEqual(Base.to_json_string([dictionary]), json_dct)
 
-        sq = Square(15, 4, 4, 66)
         self.assertEqual(Base.to_json_string([]), "[]")
-
-        sq = Square(15, 4, 4, 66)
         self.assertEqual(Base.to_json_string(None), "[]")
+
+    def test_from_json_string(self):
+        json_string = '[{"height": 4, "width": 10, "id": 89}, \
+{"height": 7, "width": 1, "id": 7}]'
+        list_output = [{'height': 4, 'width': 10, 'id': 89},
+                       {'height': 7, 'width': 1, 'id': 7}]
+        self.assertEqual(Base.from_json_string(json_string), list_output)
+
+        self.assertEqual(Base.from_json_string(''), [])
+        self.assertEqual(Base.from_json_string(None), [])
